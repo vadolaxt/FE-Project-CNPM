@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function MedicalRecordInfo() {
   const [medicalRecords, setMedicalRecords] = useState([]);
@@ -30,7 +31,7 @@ function MedicalRecordInfo() {
 
   return (
     <div>
-      <h1>Medical Records</h1>
+      <h1>Danh sách hồ sơ bệnh án</h1>
       {medicalRecords.length === 0 && <p>No medical records found.</p>}
 
       {medicalRecords.map(record => (
@@ -72,7 +73,11 @@ function MedicalRecordInfo() {
           )}
 
           <p><b>Ghi chú:</b> {record.note || 'N/A'}</p>
-          <button>Chỉnh sửa thông tin</button>
+          <Link to={`/medical-record/${record.id}`}>
+            <button>Chỉnh sửa</button>
+          </Link>
+
+
         </div>
       ))}
     </div>
