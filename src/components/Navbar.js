@@ -6,6 +6,7 @@ function Navbar() {
         <nav style={{ padding: '10px', background: '#f0f0f0' }}>
             <Link to="/doctor" style={{ marginRight: '20px' }}>Doctor Info</Link>
             <Link to="/medical-record">Hồ sơ bệnh án</Link>
+            <Link to="/prescriptions" style={{ marginRight: '200px' }}>Tạo đơn thuốc</Link>
         </nav>
     );
 }
