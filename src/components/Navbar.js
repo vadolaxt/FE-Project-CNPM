@@ -7,6 +7,7 @@ function Navbar() {
             <Link to="/doctor" style={{ marginRight: '20px' }}>Doctor Info</Link>
             {/* 14.1 */}
             <Link to="/medical-record">Hồ sơ bệnh án</Link>
+            <Link to="/prescriptions" style={{ marginRight: '200px' }}>Tạo đơn thuốc</Link>
         </nav>
     );
 }
