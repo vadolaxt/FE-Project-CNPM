@@ -73,6 +73,7 @@ function MedicalRecordInfo() {
           )}
 
           <p><b>Ghi chú:</b> {record.note || 'N/A'}</p>
+          {/* 14.2 */}
           <Link to={`/medical-record/${record.id}`}>
             <button>Chỉnh sửa</button>
           </Link>

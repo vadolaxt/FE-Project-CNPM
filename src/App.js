@@ -14,7 +14,6 @@ function App() {
                     <Route path="/doctor" element={<DoctorInfo />} />
                     <Route path="/medical-record" element={<MedicalRecordInfo />} />
                     <Route path="/medical-record/:id" element={<MedicalRecordDetail />} /> 
-
                 </Routes>
             </div>
         </Router>

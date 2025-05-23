@@ -9,7 +9,7 @@ function MedicalRecordDetail() {
     const [error, setError] = useState(null);
     const [formData, setFormData] = useState(null);
 
-
+    // 14.4.1
     useEffect(() => {
         fetch(`/api/MedicalRecord/${id}`)
             .then(res => {
@@ -68,16 +68,23 @@ function MedicalRecordDetail() {
             const data = await res.json();
             if (!res.ok) {
                 // Nếu response không OK, hiển thị message từ JSON
+                // 14.10.2
                 throw new Error(data.message || `Lỗi ${res.status}`);
             }
+            // 14.10.1
             alert(data.message || 'Lưu thành công');
             setRecord(data.data);
+            // 14.11 , 14.4.2   
             window.location.href = 'http://localhost:3000/medical-record';
         })
         .catch(err => {
             alert(`Lỗi khi lưu: ${err.message}`);
         });
         
+    };
+
+    const cancel = () => {
+        window.location.href = 'http://localhost:3000/medical-record';
     };
     
     return (
@@ -156,8 +163,10 @@ function MedicalRecordDetail() {
                     readOnly
                 />
             </p>
+            {/* 14.3.1 */}
             <button onClick={handleSave}>Lưu</button>
-            <button onClick={handleSave}>Hủy</button>
+            {/* 14.3.2 */}
+            <button onClick={cancel}>Hủy</button>
 
         </div>
     );
